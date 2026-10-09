@@ -1,6 +1,7 @@
 // Pelu Trini 1999 — interacciones
 (() => {
-  const WHATSAPP = '34606334862';
+  // Número de WhatsApp del salón (prefijo 34, sin espacios). Vacío = modo demo, no se envía nada.
+  const WHATSAPP = '';
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- Navegación: fondo al hacer scroll + menú móvil ---------- */
@@ -175,6 +176,10 @@
       ? new Date(`${dia.value}T12:00`).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long' })
       : 'cuando haya hueco';
     const msg = `¡Hola! Soy ${nombre.value.trim()}. Me gustaría pedir cita para: ${servicio.value}. Día preferido: ${fecha} (${franja.value.toLowerCase()}).`;
+    if (!WHATSAPP) {
+      error.textContent = 'Versión de demostración: aquí se abriría WhatsApp con tu mensaje para el salón.';
+      return;
+    }
     window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`, '_blank', 'noopener');
   });
 })();

@@ -18,6 +18,8 @@ npx serve -l 5173 .
 
 ## Funcionalidad
 
-- Formulario de cita → abre WhatsApp (606 334 862) con el mensaje preparado. Avisa si se elige un miércoles (cerrado).
+- Formulario de cita → abre WhatsApp con el mensaje preparado. Avisa si se elige un miércoles (cerrado).
+  Ahora está en **modo demo** (no hay número). Para activarlo: poner el número en `WHATSAPP` (`js/main.js`)
+  y en el `href` del botón flotante `.wa` (`index.html`) como `https://wa.me/34XXXXXXXXX`.
 - Horario con el día de hoy resaltado y estado "Abierto / Cerrado ahora" (horario en `SCHEDULE`, `js/main.js`).
 - Filtro de servicios, comparador antes/después, menú móvil, animaciones de entrada (respetan `prefers-reduced-motion`).
